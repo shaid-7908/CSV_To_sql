@@ -1,25 +1,51 @@
 import pandas as pd
 from sqlalchemy import create_engine
-from sqlalchemy.types import DateTime
 
-# Load the CSV file
-second_file_path = 'cutomer.csv'  # Use the correct path for your CSV file
+# Load the second CSV file
+second_file_path = 'JACdata324.csv'  # Replace with your second CSV file path
 new_data = pd.read_csv(second_file_path, low_memory=False)
 
-# Parse dates using the correct format
-new_data['CustomerDOB'] = pd.to_datetime(new_data['CustomerDOB'], format='%d-%m-%Y', errors='coerce')
-new_data['TransactionDate'] = pd.to_datetime(new_data['TransactionDate'], format='%d-%m-%Y', errors='coerce')
+def parse_mixed_formats(date_str):
+    for fmt in ('%m-%d-%y', '%m/%d/%y'):
+        try:
+            return pd.to_datetime(date_str, format=fmt)
+        except ValueError:
+            continue
+    return pd.NaT
 
-# Check if the dates are parsed correctly
-print(new_data[['CustomerDOB', 'TransactionDate']].head())
+new_data['dob'] = new_data['dob'].apply(parse_mixed_formats)
+new_data['entered'] = new_data['entered'].apply(parse_mixed_formats)
+new_data['placed_dt'] = new_data['placed_dt'].apply(parse_mixed_formats)
+new_data['dt_verif_i'] = new_data['dt_verif_i'].apply(parse_mixed_formats)
+new_data['dt_verif_h'] = new_data['dt_verif_h'].apply(parse_mixed_formats)
+new_data['casestatdt'] = new_data['casestatdt'].apply(parse_mixed_formats)
+new_data['site_date'] = new_data['site_date'].apply(parse_mixed_formats)
+new_data['cdcaids_dt'] = new_data['cdcaids_dt'].apply(parse_mixed_formats)
+new_data['pstart_dt'] = new_data['pstart_dt'].apply(parse_mixed_formats)
+new_data['hivstat_dt'] = new_data['hivstat_dt'].apply(parse_mixed_formats)
+new_data['sstart_dt'] = new_data['sstart_dt'].apply(parse_mixed_formats)
+new_data['sexp_dt'] = new_data['sexp_dt'].apply(parse_mixed_formats)
+
+# Convert date columns to datetime format
+# Ensure you use the same date format mapping as before
+# date_columns_formats = {
+#     'prog_date': '%d-%m-%Y',
+#     'resdate': '%d/%m/%Y',
+#     'dt_rprovid': '%d/%m/%Y'
+# }
+
+# for col, fmt in date_columns_formats.items():
+#     new_data[col] = pd.to_datetime(new_data[col], format=fmt, errors='coerce')
+
+new_data = new_data.drop(columns=['ID'])
 
 # Database connection parameters
 db_user = 'dev2'
 db_password = 'Str0ngPssword'
 db_host = 'localhost'
 db_port = '3306'
-db_name = 'wokrmate_banking'
-table_name = 'customer_trans'
+db_name = 'workmate'
+table_name = 'user_data'
 
 # Create a connection string
 connection_string = f'mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
@@ -28,9 +54,6 @@ connection_string = f'mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port
 engine = create_engine(connection_string)
 
 # Append the new data to the existing SQL table
-new_data.to_sql(name=table_name, con=engine, if_exists='append', index=False, dtype={
-    'CustomerDOB': DateTime(),
-    'TransactionDate': DateTime()
-})
+new_data.to_sql(name=table_name, con=engine, if_exists='append', index=False)
 
-print(f"Data from the CSV successfully appended to the table {table_name} in the database {db_name}.")
+print(f"Data from the second CSV successfully appended to the table {table_name} in the database {db_name}.")
