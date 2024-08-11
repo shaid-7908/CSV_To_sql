@@ -1,0 +1,9 @@
+# Ignore __pycache__ directories
+__pycache__/
+
+# Ignore all .csv files
+*.csv
+*.xlsx
+*.sql
+
+venv

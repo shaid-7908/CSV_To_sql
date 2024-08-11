@@ -1,0 +1,36 @@
+import pandas as pd
+from sqlalchemy import create_engine
+from sqlalchemy.types import DateTime
+
+# Load the CSV file
+second_file_path = 'cutomer.csv'  # Use the correct path for your CSV file
+new_data = pd.read_csv(second_file_path, low_memory=False)
+
+# Parse dates using the correct format
+new_data['CustomerDOB'] = pd.to_datetime(new_data['CustomerDOB'], format='%d-%m-%Y', errors='coerce')
+new_data['TransactionDate'] = pd.to_datetime(new_data['TransactionDate'], format='%d-%m-%Y', errors='coerce')
+
+# Check if the dates are parsed correctly
+print(new_data[['CustomerDOB', 'TransactionDate']].head())
+
+# Database connection parameters
+db_user = 'dev2'
+db_password = 'Str0ngPssword'
+db_host = 'localhost'
+db_port = '3306'
+db_name = 'wokrmate_banking'
+table_name = 'customer_trans'
+
+# Create a connection string
+connection_string = f'mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
+
+# Create a SQLAlchemy engine
+engine = create_engine(connection_string)
+
+# Append the new data to the existing SQL table
+new_data.to_sql(name=table_name, con=engine, if_exists='append', index=False, dtype={
+    'CustomerDOB': DateTime(),
+    'TransactionDate': DateTime()
+})
+
+print(f"Data from the CSV successfully appended to the table {table_name} in the database {db_name}.")

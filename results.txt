@@ -1,0 +1,135 @@
+ID: 1
+tc_id: CV00000002
+testtype: 06
+testtypeds: CD4 (T-Helper) Tests
+testcode: None
+testcodeds: None
+result: None
+result_ds: None
+treat_nmi: 0
+count: 181.0
+range: 1.0
+range_ds: <200
+percent: 0
+testdate: 1997-11-14 00:00:00
+resdate: None
+rprovided: None
+dt_rprovid: None
+treatopton: None
+provided: None
+providedds: None
+act_id: None
+med_indic: 0
+unknown: 0
+no_program: 0
+program: None
+program_ds: None
+
+ID: 2
+tc_id: CV00000002
+testtype: 06
+testtypeds: CD4 (T-Helper) Tests
+testcode: None
+testcodeds: None
+result: None
+result_ds: None
+treat_nmi: 0
+count: 0.0
+range: None
+range_ds: None
+percent: 0
+testdate: 2000-10-27 00:00:00
+resdate: None
+rprovided: None
+dt_rprovid: None
+treatopton: None
+provided: None
+providedds: None
+act_id: CV00001154
+med_indic: 0
+unknown: 0
+no_program: 0
+program: None
+program_ds: None
+
+ID: 3
+tc_id: CV00000002
+testtype: 06
+testtypeds: CD4 (T-Helper) Tests
+testcode: None
+testcodeds: None
+result: None
+result_ds: None
+treat_nmi: 0
+count: 0.0
+range: None
+range_ds: None
+percent: 0
+testdate: 2001-02-26 00:00:00
+resdate: None
+rprovided: None
+dt_rprovid: None
+treatopton: None
+provided: None
+providedds: None
+act_id: CV00001768
+med_indic: 0
+unknown: 0
+no_program: 0
+program: None
+program_ds: None
+
+ID: 4
+tc_id: CV00000002
+testtype: 06
+testtypeds: CD4 (T-Helper) Tests
+testcode: None
+testcodeds: None
+result: None
+result_ds: None
+treat_nmi: 0
+count: 398.0
+range: 2.0
+range_ds: 200-499
+percent: 0
+testdate: 2001-02-02 00:00:00
+resdate: None
+rprovided: None
+dt_rprovid: None
+treatopton: None
+provided: None
+providedds: None
+act_id: CV00001768
+med_indic: 0
+unknown: 0
+no_program: 0
+program: None
+program_ds: None
+
+ID: 5
+tc_id: CV00000002
+testtype: 06
+testtypeds: CD4 (T-Helper) Tests
+testcode: None
+testcodeds: None
+result: None
+result_ds: None
+treat_nmi: 0
+count: 347.0
+range: 2.0
+range_ds: 200-499
+percent: 0
+testdate: 2001-05-08 00:00:00
+resdate: None
+rprovided: None
+dt_rprovid: None
+treatopton: None
+provided: None
+providedds: None
+act_id: CV00002188
+med_indic: 0
+unknown: 0
+no_program: 0
+program: None
+program_ds: None
+

@@ -1,0 +1,301 @@
+Table: lab_data
+     Field     Type Null Key Default Extra
+        ID   bigint  YES        None      
+     tc_id     text  YES        None      
+  testtype     text  YES        None      
+testtypeds     text  YES        None      
+  testcode   double  YES        None      
+testcodeds     text  YES        None      
+    result   double  YES        None      
+ result_ds     text  YES        None      
+ treat_nmi   bigint  YES        None      
+     count   double  YES        None      
+     range   double  YES        None      
+  range_ds     text  YES        None      
+   percent   bigint  YES        None      
+  testdate datetime  YES        None      
+   resdate datetime  YES        None      
+ rprovided     text  YES        None      
+dt_rprovid datetime  YES        None      
+treatopton     text  YES        None      
+  provided     text  YES        None      
+providedds     text  YES        None      
+    act_id     text  YES        None      
+ med_indic   bigint  YES        None      
+   unknown   bigint  YES        None      
+no_program   bigint  YES        None      
+   program     text  YES        None      
+program_ds     text  YES        None      
+
+Table: program_data
+        Field     Type Null Key Default Extra
+           ID   bigint  YES        None      
+        tc_id     text  YES        None      
+      program     text  YES        None      
+    prog_date datetime  YES        None      
+     prog_end datetime  YES        None      
+   program_ds     text  YES        None      
+         type     text  YES        None      
+    worker_id     text  YES        None      
+   cur_worker     text  YES        None      
+   first_serv datetime  YES        None      
+       reason   double  YES        None      
+    reas_desc     text  YES        None      
+     ref_srce     text  YES        None      
+  ref_srce_de     text  YES        None      
+     ref_type   bigint  YES        None      
+ref_type_desc     text  YES        None      
+
+Table: service_data
+     Field     Type Null Key Default Extra
+        ID   bigint  YES        None      
+    act_id     text  YES        None      
+     tc_id     text  YES        None      
+  serv_cat   bigint  YES        None      
+servcatdes     text  YES        None      
+    enc_id   bigint  YES        None      
+ enc_descr     text  YES        None      
+   program     text  YES        None      
+prog_descr     text  YES        None      
+      site     text  YES        None      
+site_descr     text  YES        None      
+    act_dt datetime  YES        None      
+   act_loc   double  YES        None      
+enclocdesc   double  YES        None      
+categorycd   double  YES        None      
+categoryds   double  YES        None      
+    beg_tm   double  YES        None      
+    beg_am   double  YES        None      
+    end_tm   double  YES        None      
+    end_am   double  YES        None      
+date_compl datetime  YES        None      
+  enc_with   double  YES        None      
+enc_withds   double  YES        None      
+ref_cont_w   double  YES        None      
+invlvagdes   double  YES        None      
+ref_cont_2   double  YES        None      
+invlvag2ds   double  YES        None      
+ worker_id     text  YES        None      
+ work_name     text  YES        None      
+      team   double  YES        None      
+ team_desc   double  YES        None      
+  diagnos1   double  YES        None      
+diag1_desc   double  YES        None      
+  diagnos2   double  YES        None      
+diag2_desc   double  YES        None      
+  enc_cadr     text  YES        None      
+   enc_mai   double  YES        None      
+   user_id     text  YES        None      
+  username     text  YES        None      
+        dt datetime  YES        None      
+    s_date datetime  YES        None      
+  s_beg_tm   double  YES        None      
+  s_beg_am   double  YES        None      
+  s_end_tm   double  YES        None      
+  s_end_am   double  YES        None      
+  duration   bigint  YES        None      
+service_id   bigint  YES        None      
+serv_descr     text  YES        None      
+    att_id   double  YES        None      
+service_va   bigint  YES        None      
+sv_descrip   double  YES        None      
+    grp_id   double  YES        None      
+ serv_cadr     text  YES        None      
+  sercadr2     text  YES        None      
+  serv_mai   double  YES        None      
+  how_prov   double  YES        None      
+ how_provd   double  YES        None      
+   outcome   double  YES        None      
+ out_descr   double  YES        None      
+ proc_serv   double  YES        None      
+ s_work_id     text  YES        None      
+s_workname     text  YES        None      
+   s_value   bigint  YES        None      
+  numitems   bigint  YES        None      
+ s_user_id     text  YES        None      
+s_username     text  YES        None      
+      s_dt datetime  YES        None      
+     conno   double  YES        None      
+  model_id   bigint  YES        None      
+interventi   bigint  YES        None      
+session_nu   bigint  YES        None      
+inc_provid     text  YES        None      
+unit_deliv   double  YES        None      
+  mcondoms   bigint  YES        None      
+  fcondoms   bigint  YES        None      
+sns_ref_cd   double  YES        None      
+sns_ref_ds   double  YES        None      
+sns_partno   bigint  YES        None      
+
+Table: user_data
+     Field     Type Null Key Default Extra
+        ID   bigint  YES        None      
+    Field1     text  YES        None      
+     tc_id     text  YES        None      
+ anonymous     text  YES        None      
+     id_no     text  YES        None      
+    urn_no     text  YES        None      
+ client_id     text  YES        None      
+        mi     text  YES        None      
+   gndrprn   double  YES        None      
+gndrprn_ot   double  YES        None      
+   case_no     text  YES        None      
+  hispanic   bigint  YES        None      
+   hisp_ds     text  YES        None      
+     white   bigint  YES        None      
+ blafrican   bigint  YES        None      
+     asian   bigint  YES        None      
+hawaisland   bigint  YES        None      
+indialaska   bigint  YES        None      
+ someother   bigint  YES        None      
+ prim_lang   bigint  YES        None      
+pr_lang_ds     text  YES        None      
+  sec_lang   double  YES        None      
+  sec_l_ds     text  YES        None      
+read_lang1   double  YES        None      
+read_l1_ds     text  YES        None      
+read_lang2   double  YES        None      
+read_l2_ds     text  YES        None      
+     relig   double  YES        None      
+  relig_ds     text  YES        None      
+       sex     text  YES        None      
+sexbrth_cd   double  YES        None      
+sexbrth_ds     text  YES        None      
+    gender   bigint  YES        None      
+ gender_ds     text  YES        None      
+ gender_ot   double  YES        None      
+sex_orient     text  YES        None      
+sex_orntot   double  YES        None      
+  gender_x   double  YES        None      
+       dob datetime  YES        None      
+       age   bigint  YES        None      
+   marital   double  YES        None      
+  marit_ds     text  YES        None      
+    phhome   double  YES        None      
+    phwork   double  YES        None      
+       aka     text  YES        None      
+  registry   double  YES        None      
+int_worker     text  YES        None      
+  workname     text  YES        None      
+  int_prog     text  YES        None      
+   entered datetime  YES        None      
+ placed_dt datetime  YES        None      
+   country     text  YES        None      
+country_ds     text  YES        None      
+     alias   double  YES        None      
+ref_source     text  YES        None      
+ref_src_ds     text  YES        None      
+  ref_cntc     text  YES        None      
+ref_cnt_ds     text  YES        None      
+  discrete     text  YES        None      
+ mail_cont     text  YES        None      
+phone_cont     text  YES        None      
+ home_cont     text  YES        None      
+     hhead     text  YES        None      
+  is_refus     text  YES        None      
+hshld_size   bigint  YES        None      
+hshld_incm   bigint  YES        None      
+dt_verif_i datetime  YES        None      
+    dchild     text  YES        None      
+  nrefnote   bigint  YES        None      
+inaddhouse     text  YES        None      
+   housing   bigint  YES        None      
+housing_ds     text  YES        None      
+dt_verif_h datetime  YES        None      
+  ref_src2   bigint  YES        None      
+ ref_s2_ds     text  YES        None      
+   street2     text  YES        None      
+      city     text  YES        None      
+        st     text  YES        None      
+       zip   bigint  YES        None      
+    county   double  YES        None      
+ county_ds     text  YES        None      
+ stat_code     text  YES        None      
+  stattype     text  YES        None      
+    active     text  YES        None      
+  casestat     text  YES        None      
+casestatdt datetime  YES        None      
+close_code   double  YES        None      
+closcod_ds     text  YES        None      
+      site     text  YES        None      
+ site_date datetime  YES        None      
+   site_ds     text  YES        None      
+dt_verif_s datetime  YES        None      
+ insurance   bigint  YES        None      
+ insurdesc     text  YES        None      
+  pprov_id     text  YES        None      
+pprov_name     text  YES        None      
+  pplan_id   double  YES        None      
+pplan_desc     text  YES        None      
+pma_pendin   bigint  YES        None      
+pnys_marke   bigint  YES        None      
+     ptype   double  YES        None      
+  ptype_ds     text  YES        None      
+ pstart_dt datetime  YES        None      
+   pexp_dt datetime  YES        None      
+   pinsure   double  YES        None      
+  sprov_id     text  YES        None      
+sprov_name     text  YES        None      
+  splan_id   double  YES        None      
+splan_desc   double  YES        None      
+sma_pendin   bigint  YES        None      
+snys_marke   bigint  YES        None      
+     stype   double  YES        None      
+  stype_ds     text  YES        None      
+ sstart_dt datetime  YES        None      
+   sexp_dt datetime  YES        None      
+  spol_num     text  YES        None      
+   sinsure     text  YES        None      
+  user1_cp   double  YES        None      
+     user1   double  YES        None      
+  user1_ds   double  YES        None      
+  user2_cp   double  YES        None      
+     user2   double  YES        None      
+  user2_ds   double  YES        None      
+  user3_cp   double  YES        None      
+     user3   double  YES        None      
+  user3_ds   double  YES        None      
+  user4_cp   double  YES        None      
+     user4   double  YES        None      
+  user4_ds   double  YES        None      
+  user5_cp   double  YES        None      
+     user5   double  YES        None      
+  user5_ds   double  YES        None      
+  user6_cp   double  YES        None      
+     user6   double  YES        None      
+  user6_ds   double  YES        None      
+  user7_cp   double  YES        None      
+     user7   double  YES        None      
+  user7_ds   double  YES        None      
+  user8_cp   double  YES        None      
+     user8   double  YES        None      
+  user8_ds   double  YES        None      
+  user9_cp   double  YES        None      
+     user9   double  YES        None      
+  user9_ds   double  YES        None      
+ user10_cp     text  YES        None      
+    user10   double  YES        None      
+ user10_ds     text  YES        None      
+ user11_cp     text  YES        None      
+    user11     text  YES        None      
+ user12_cp   double  YES        None      
+    user12   double  YES        None      
+ user13_cp   double  YES        None      
+    user13   double  YES        None      
+ user14_cp     text  YES        None      
+    user14     text  YES        None      
+ user15_cp   double  YES        None      
+    user15   double  YES        None      
+   hispdet   double  YES        None      
+ hispdetds     text  YES        None      
+  whitedet   double  YES        None      
+whitedetds   double  YES        None      
+  blackdet   double  YES        None      
+blackdetds     text  YES        None      
+  asiandet   double  YES        None      
+asiandetds     text  YES        None      
+  hawiidet   double  YES        None      
+hawiidetds   double  YES        None      
+hudchronic   bigint  YES        None      
+fipscounty   bigint  YES        None      
+
